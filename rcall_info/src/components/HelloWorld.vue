@@ -13,9 +13,9 @@
 			}
 		},
 	created () {
-		this.$http.get('/api/hello').then((res) => {
-				this.msg = res.body.message
-			}).catch((ex) => console.log(ex))
+		//this.$http.get('/api/hello').then((res) => {
+		//		this.msg = res.body.message
+		//	}).catch((ex) => console.log(ex))
 		}
 	}
 </script>

@@ -11,12 +11,29 @@ namespace rcall_info.Controllers
     [Route("api")]
     public class ApiController : Controller
     {
-		[Route("hello")]
-		[HttpGet]
-		public IActionResult Hello()
-		{
-			var msg = new { Message = "Hello World" };
-			return this.Ok(msg);
-		}
+	[Route("hello")]
+	[HttpGet]
+	public IActionResult Hello()
+	{
+
+	    List<Item> items = new List<Item>
+	    {
+		new Item("adin"),
+		new Item("dva"),
+		new Item("tri")
+	    };
+	    return Json(new
+	    {
+		items
+	    });
+	}
+	private struct Item
+	{
+	    public string text;
+	    public Item(string txt)
+	    {
+		text = txt;
+	    }
+	}
     }
 }
