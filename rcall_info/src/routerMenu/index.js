@@ -5,11 +5,9 @@ import Menu from '@/components/NavMenuStart'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Menu',
-	  component: Menu
-    }
-  ]
+	routes: [
+		{ path: '/', component: Menu },
+		{ path: '/:id', component: Menu },
+		{ path: '/:id/*', component: Menu}
+	]
 })

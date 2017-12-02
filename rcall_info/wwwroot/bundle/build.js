@@ -14330,11 +14330,7 @@ if (false) {
 __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  routes: [{
-    path: '/',
-    name: 'Menu',
-    component: __WEBPACK_IMPORTED_MODULE_2__components_NavMenuStart__["a" /* default */]
-  }]
+	routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_2__components_NavMenuStart__["a" /* default */] }, { path: '/:id', component: __WEBPACK_IMPORTED_MODULE_2__components_NavMenuStart__["a" /* default */] }, { path: '/:id/*', component: __WEBPACK_IMPORTED_MODULE_2__components_NavMenuStart__["a" /* default */] }]
 }));
 
 /***/ }),
@@ -14406,22 +14402,47 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
 	name: 'StartMenu',
 	data: function data() {
 		return {
-			items: []
+			itemsMenu: []
 		};
 	},
-	created: function created() {
-		var _this = this;
 
-		this.$http.get('/api/hello').then(function (res) {
-			_this.items = res.body.items;
-		}).catch(function (ex) {
-			return console.log(ex);
-		});
+	props: {
+		ph: {
+			type: String,
+			default: ''
+		}
+	},
+	created: function created() {
+		this.fetchData();
+	},
+
+	watch: {
+		'$route': 'fetchData'
+	},
+	methods: {
+		fetchData: function fetchData() {
+			var _this = this;
+
+			var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
+			this.$http.get('/api/' + pathGet).then(function (res) {
+				_this.itemsMenu = res.body.itemsMenu;
+			}).catch(function (ex) {
+				return console.log(ex);
+			});
+		}
 	}
 });
 
@@ -14442,7 +14463,7 @@ var render = function() {
         _c(
           "ul",
           { staticClass: "nav", attrs: { id: "side-menu" } },
-          _vm._l(_vm.items, function(item) {
+          _vm._l(_vm.itemsMenu, function(item) {
             return _c(
               "li",
               [
@@ -14450,18 +14471,52 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "hvr-bounce-to-right",
-                    attrs: { to: "/home" }
+                    attrs: { to: item.link }
                   },
                   [
                     _c("img", {
-                      staticClass: "nav_icon ",
-                      attrs: { src: "/images/quad.svg" }
+                      staticClass: "nav_icon",
+                      attrs: { src: item.image }
                     }),
                     _c("span", { staticClass: "nav-label" }, [
                       _vm._v(_vm._s(item.text))
-                    ])
+                    ]),
+                    item.haveChild
+                      ? _c("span", { staticClass: "fa arrow" })
+                      : _vm._e()
                   ]
-                )
+                ),
+                _vm._v(" "),
+                item.haveChild
+                  ? _c(
+                      "ul",
+                      { staticClass: "nav nav-second-level" },
+                      _vm._l(item.childItems, function(childitem) {
+                        return _c(
+                          "li",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "hvr-bounce-to-right",
+                                attrs: { to: childitem.link }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "nav_icon",
+                                  attrs: { src: childitem.image }
+                                }),
+                                _c("span", { staticClass: "nav-label" }, [
+                                  _vm._v(_vm._s(childitem.text))
+                                ])
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      })
+                    )
+                  : _vm._e()
               ],
               1
             )

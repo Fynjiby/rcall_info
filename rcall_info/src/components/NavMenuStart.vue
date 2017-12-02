@@ -2,10 +2,18 @@
 	<div class="navbar-default sidebar" role="navigation">
 		<div class="sidebar-nav navbar-collapse">
 			<ul class="nav" id="side-menu">
-				<li v-for="item in items">
-					<router-link to="/home" class="hvr-bounce-to-right">
-						<img class="nav_icon " src="/images/quad.svg" /><span class="nav-label">{{ item.text }}</span>
+				<li v-for="item in itemsMenu">
+					<router-link :to="item.link" class="hvr-bounce-to-right">
+						<img class="nav_icon" :src="item.image" /><span class="nav-label">{{ item.text }}</span><span v-if=item.haveChild class="fa arrow"></span>
 					</router-link>
+					<ul v-if=item.haveChild class="nav nav-second-level">
+						<li v-for="childitem in item.childItems">
+							<router-link :to="childitem.link" class="hvr-bounce-to-right">
+								<img class="nav_icon" :src="childitem.image" /><span class="nav-label">{{ childitem.text }}</span>
+							</router-link>
+						</li>
+					</ul>
+
 				</li>
 			</ul>
 		</div>
@@ -16,13 +24,28 @@
 		name: 'StartMenu',
 		data() {
 			return {
-				items: []
+				itemsMenu: []
+			}
+		},
+		props: {
+			ph: {
+				type: String,
+				default: ''
 			}
 		},
 		created() {
-			this.$http.get('/api/hello').then((res) => {
-				this.items = res.body.items
-			}).catch((ex) => console.log(ex))
+			this.fetchData()
+		},
+		watch: {
+			'$route': 'fetchData'
+		},
+		methods: {
+			fetchData() {
+				var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
+				this.$http.get('/api/' + pathGet).then((res) => {
+					this.itemsMenu = res.body.itemsMenu
+				}).catch((ex) => console.log(ex))
+			}
 		}
 	}
 </script>
