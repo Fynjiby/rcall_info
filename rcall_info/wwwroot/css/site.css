@@ -1,5 +1,17 @@
-﻿.logo {
+.logo {
     margin-left: 5px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+
+.fade-enter, .fade-leave-to  {
+    opacity: 0
+}
+
+.a-have-child {
+    cursor:pointer;
 }
 
 #profile-icon {

@@ -15,10 +15,15 @@ namespace rcall_info.Controllers
         [HttpGet]
         public IActionResult Start()
         {
-
+            List<ItemMenu> childItems = new List<ItemMenu>
+            {
+                new ItemMenu("../plane/parts/motors","Моторы","/images/quad.svg"),
+                new ItemMenu("../plane/parts/flams","Рамы","/images/quad.svg"),
+                new ItemMenu("../plane/parts/esc","ESC","/images/quad.svg")
+            };
             List<ItemMenu> itemsMenu = new List<ItemMenu>
             {
-                new ItemMenu("copters","Мультикоптеры","/images/quad.svg"),
+                new ItemMenu("copters","Мультикоптеры","/images/quad.svg",childItems),
                 new ItemMenu("plane","Самолеты","/images/plane.svg")
             };
             return Json(new
@@ -63,7 +68,7 @@ namespace rcall_info.Controllers
             {
                 new ItemMenu("../plane/news","Новости","/images/quad.svg"),
                 new ItemMenu("../plane/events","События","/images/plane.svg"),
-                new ItemMenu("../plane/parts","Комплектующие","/images/plane.svg",childItems)
+                new ItemMenu("","Комплектующие","/images/plane.svg",childItems)
             };
             return Json(new
             {
@@ -78,6 +83,7 @@ namespace rcall_info.Controllers
             public string link;
             public List<ItemMenu> childItems;
             public bool haveChild;
+            public bool open;
 
             public ItemMenu(string lnk, string txt, string img, List<ItemMenu> child = null)
             {
@@ -86,6 +92,7 @@ namespace rcall_info.Controllers
                 image = img;
                 childItems = child;
                 haveChild = child != null;
+                open = false;
             }
         }
     }

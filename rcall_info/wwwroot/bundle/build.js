@@ -14410,40 +14410,50 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-	name: 'StartMenu',
-	data: function data() {
-		return {
-			itemsMenu: []
-		};
-	},
+    name: 'StartMenu',
+    data: function data() {
+        return {
+            itemsMenu: []
+        };
+    },
 
-	props: {
-		ph: {
-			type: String,
-			default: ''
-		}
-	},
-	created: function created() {
-		this.fetchData();
-	},
+    props: {
+        ph: {
+            type: String,
+            default: ''
+        }
+    },
+    created: function created() {
+        this.fetchData();
+    },
 
-	watch: {
-		'$route': 'fetchData'
-	},
-	methods: {
-		fetchData: function fetchData() {
-			var _this = this;
+    watch: {
+        '$route.params.id': 'fetchData'
+    },
+    methods: {
+        fetchData: function fetchData() {
+            var _this = this;
 
-			var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
-			this.$http.get('/api/' + pathGet).then(function (res) {
-				_this.itemsMenu = res.body.itemsMenu;
-			}).catch(function (ex) {
-				return console.log(ex);
-			});
-		}
-	}
+            var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
+            this.$http.get('/api/' + pathGet).then(function (res) {
+                _this.itemsMenu = res.body.itemsMenu;
+            }).catch(function (ex) {
+                return console.log(ex);
+            });
+        },
+
+        toggle: function toggle(item) {
+            if (item.haveChild) {
+                item.open = !item.open;
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -14467,56 +14477,95 @@ var render = function() {
             return _c(
               "li",
               [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "hvr-bounce-to-right",
-                    attrs: { to: item.link }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "nav_icon",
-                      attrs: { src: item.image }
-                    }),
-                    _c("span", { staticClass: "nav-label" }, [
-                      _vm._v(_vm._s(item.text))
-                    ]),
-                    item.haveChild
-                      ? _c("span", { staticClass: "fa arrow" })
-                      : _vm._e()
-                  ]
-                ),
+                !item.haveChild
+                  ? _c(
+                      "router-link",
+                      {
+                        staticClass: "hvr-bounce-to-right",
+                        attrs: { to: item.link }
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-desktop nav_icon" }),
+                        _c("span", { staticClass: "nav-label" }, [
+                          _vm._v(_vm._s(item.text))
+                        ]),
+                        item.haveChild
+                          ? _c("span", { staticClass: "fa" })
+                          : _vm._e()
+                      ]
+                    )
+                  : _vm._e(),
                 _vm._v(" "),
                 item.haveChild
                   ? _c(
-                      "ul",
-                      { staticClass: "nav nav-second-level" },
-                      _vm._l(item.childItems, function(childitem) {
-                        return _c(
-                          "li",
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "hvr-bounce-to-right",
-                                attrs: { to: childitem.link }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "nav_icon",
-                                  attrs: { src: childitem.image }
-                                }),
-                                _c("span", { staticClass: "nav-label" }, [
-                                  _vm._v(_vm._s(childitem.text))
-                                ])
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      })
+                      "a",
+                      {
+                        staticClass: "hvr-bounce-to-right a-have-child",
+                        on: {
+                          click: function($event) {
+                            _vm.toggle(item)
+                          }
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-desktop nav_icon" }),
+                        _c("span", { staticClass: "nav-label" }, [
+                          _vm._v(_vm._s(item.text))
+                        ]),
+                        item.haveChild
+                          ? _c("span", {
+                              staticClass: "fa",
+                              class: {
+                                "fa-angle-down": item.open,
+                                "fa-angle-left": !item.open
+                              }
+                            })
+                          : _vm._e()
+                      ]
                     )
-                  : _vm._e()
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("transition", { attrs: { name: "fade" } }, [
+                  item.haveChild
+                    ? _c(
+                        "ul",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: item.open,
+                              expression: "item.open"
+                            }
+                          ],
+                          staticClass: "nav nav-second-level"
+                        },
+                        _vm._l(item.childItems, function(childitem) {
+                          return _c(
+                            "li",
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "hvr-bounce-to-right",
+                                  attrs: { to: childitem.link }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-desktop nav_icon"
+                                  }),
+                                  _c("span", { staticClass: "nav-label" }, [
+                                    _vm._v(_vm._s(childitem.text))
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        })
+                      )
+                    : _vm._e()
+                ])
               ],
               1
             )
