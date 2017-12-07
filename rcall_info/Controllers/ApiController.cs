@@ -15,15 +15,9 @@ namespace rcall_info.Controllers
         [HttpGet]
         public IActionResult Start()
         {
-            List<ItemMenu> childItems = new List<ItemMenu>
-            {
-                new ItemMenu("../plane/parts/motors","Моторы","/images/quad.svg"),
-                new ItemMenu("../plane/parts/flams","Рамы","/images/quad.svg"),
-                new ItemMenu("../plane/parts/esc","ESC","/images/quad.svg")
-            };
             List<ItemMenu> itemsMenu = new List<ItemMenu>
             {
-                new ItemMenu("copters","Мультикоптеры","/images/quad.svg",childItems),
+                new ItemMenu("copters","Мультикоптеры","/images/quad.svg"),
                 new ItemMenu("plane","Самолеты","/images/plane.svg")
             };
             return Json(new

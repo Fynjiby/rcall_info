@@ -1,6 +1,6 @@
 <template>
   <div id="my-side-nav-menu">
-    <router-view/>
+    <router-view name="menu"/>
   </div>
 </template>
 

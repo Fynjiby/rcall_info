@@ -4,16 +4,16 @@
             <ul class="nav" id="side-menu">
                 <li v-for="item in itemsMenu">
                     <router-link v-if=!item.haveChild :to="item.link" class="hvr-bounce-to-right">
-                        <i class="fa fa-desktop nav_icon"></i><span class="nav-label">{{ item.text }}</span><span v-if=item.haveChild class="fa"></span>
+                        <img class="nav_icon" :src="item.image" /><span class="nav-label">{{ item.text }}</span><span v-if=item.haveChild class="fa"></span>
                     </router-link>
                     <a v-if=item.haveChild @click="toggle(item)" class="hvr-bounce-to-right a-have-child">
-                        <i class="fa fa-desktop nav_icon"></i><span class="nav-label">{{ item.text }}</span><span v-if=item.haveChild class="fa" v-bind:class="{ 'fa-angle-down': item.open, 'fa-angle-left': !item.open }"></span>
+                        <img class="nav_icon" :src="item.image" /><span class="nav-label">{{ item.text }}</span><span v-if=item.haveChild class="fa arrow-menu" v-bind:class="{ 'fa-angle-down': item.open, 'fa-angle-left': !item.open }"></span>
                     </a>
                     <transition name="fade">
                         <ul v-if=item.haveChild v-show=item.open class="nav nav-second-level">
                             <li v-for="childitem in item.childItems">
                                 <router-link :to="childitem.link" class="hvr-bounce-to-right">
-                                    <i class="fa fa-desktop nav_icon"></i><span class="nav-label">{{ childitem.text }}</span>
+                                    <img class="nav_icon item-menu-child" :src="childitem.image" /><span class="nav-label">{{ childitem.text }}</span>
                                 </router-link>
                             </li>
                         </ul>

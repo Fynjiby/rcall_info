@@ -20,7 +20,7 @@ p {
 }
 
 html, body {
-    font-family: 'Montserrat-Regular';
+    font-family: 'Magistral';
     font-size: 100%;
     background: #F3F3F4;
     overflow-x: hidden;
@@ -29,6 +29,11 @@ html, body {
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Magistral';
+    src: url(../fonts/Magistral.ttf) format('truetype');
 }
 
 @font-face {
