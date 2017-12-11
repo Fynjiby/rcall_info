@@ -14309,6 +14309,30 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'StartMenu',
@@ -14380,16 +14404,20 @@ var render = function() {
                         attrs: { to: item.link }
                       },
                       [
-                        _c("img", {
-                          staticClass: "nav_icon",
-                          attrs: { src: item.image }
-                        }),
+                        !item.isImage
+                          ? _c("i", { class: "fa nav_icon " + item.icon })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        item.isImage
+                          ? _c("img", {
+                              staticClass: "nav_icon",
+                              attrs: { src: item.image }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c("span", { staticClass: "nav-label" }, [
                           _vm._v(_vm._s(item.text))
-                        ]),
-                        item.haveChild
-                          ? _c("span", { staticClass: "fa" })
-                          : _vm._e()
+                        ])
                       ]
                     )
                   : _vm._e(),
@@ -14406,13 +14434,21 @@ var render = function() {
                         }
                       },
                       [
-                        _c("img", {
-                          staticClass: "nav_icon",
-                          attrs: { src: item.image }
-                        }),
+                        !item.isImage
+                          ? _c("i", { class: "fa nav_icon " + item.icon })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        item.isImage
+                          ? _c("img", {
+                              staticClass: "nav_icon",
+                              attrs: { src: item.image }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c("span", { staticClass: "nav-label" }, [
                           _vm._v(_vm._s(item.text))
                         ]),
+                        _vm._v(" "),
                         item.haveChild
                           ? _c("span", {
                               staticClass: "fa arrow-menu",
@@ -14445,22 +14481,157 @@ var render = function() {
                           return _c(
                             "li",
                             [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "hvr-bounce-to-right",
-                                  attrs: { to: childitem.link }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "nav_icon item-menu-child",
-                                    attrs: { src: childitem.image }
-                                  }),
-                                  _c("span", { staticClass: "nav-label" }, [
-                                    _vm._v(_vm._s(childitem.text))
-                                  ])
-                                ]
-                              )
+                              !childitem.haveChild
+                                ? _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "hvr-bounce-to-right",
+                                      attrs: { to: childitem.link }
+                                    },
+                                    [
+                                      !childitem.isImage
+                                        ? _c("i", {
+                                            class:
+                                              "fa nav_icon item-menu-child" +
+                                              childitem.icon
+                                          })
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      childitem.isImage
+                                        ? _c("img", {
+                                            staticClass:
+                                              "nav_icon item-menu-child",
+                                            attrs: { src: childitem.image }
+                                          })
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "nav-label" }, [
+                                        _vm._v(_vm._s(childitem.text))
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              childitem.haveChild
+                                ? _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "hvr-bounce-to-right a-have-child",
+                                      on: {
+                                        click: function($event) {
+                                          _vm.toggle(childitem)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      !childitem.isImage
+                                        ? _c("i", {
+                                            class:
+                                              "fa nav_icon item-menu-child " +
+                                              childitem.icon
+                                          })
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      childitem.isImage
+                                        ? _c("img", {
+                                            staticClass:
+                                              "nav_icon item-menu-child",
+                                            attrs: { src: childitem.image }
+                                          })
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "nav-label" }, [
+                                        _vm._v(_vm._s(childitem.text))
+                                      ]),
+                                      _vm._v(" "),
+                                      childitem.haveChild
+                                        ? _c("span", {
+                                            staticClass: "fa arrow-menu",
+                                            class: {
+                                              "fa-angle-down": childitem.open,
+                                              "fa-angle-left": !childitem.open
+                                            }
+                                          })
+                                        : _vm._e()
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("transition", { attrs: { name: "fade" } }, [
+                                childitem.haveChild
+                                  ? _c(
+                                      "ul",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "show",
+                                            rawName: "v-show",
+                                            value: childitem.open,
+                                            expression: "childitem.open"
+                                          }
+                                        ],
+                                        staticClass: "nav nav-second-level"
+                                      },
+                                      _vm._l(childitem.childItems, function(
+                                        ChildChildItem
+                                      ) {
+                                        return _c(
+                                          "li",
+                                          [
+                                            !ChildChildItem.haveChild
+                                              ? _c(
+                                                  "router-link",
+                                                  {
+                                                    staticClass:
+                                                      "hvr-bounce-to-right",
+                                                    attrs: {
+                                                      to: ChildChildItem.link
+                                                    }
+                                                  },
+                                                  [
+                                                    !ChildChildItem.isImage
+                                                      ? _c("i", {
+                                                          class:
+                                                            "fa nav_icon " +
+                                                            ChildChildItem.icon
+                                                        })
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    ChildChildItem.isImage
+                                                      ? _c("img", {
+                                                          staticClass:
+                                                            "nav_icon item-menu-child",
+                                                          attrs: {
+                                                            src:
+                                                              ChildChildItem.image
+                                                          }
+                                                        })
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass: "nav-label"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            ChildChildItem.text
+                                                          )
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              : _vm._e()
+                                          ],
+                                          1
+                                        )
+                                      })
+                                    )
+                                  : _vm._e()
+                              ])
                             ],
                             1
                           )
