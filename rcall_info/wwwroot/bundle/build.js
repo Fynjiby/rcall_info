@@ -14593,7 +14593,7 @@ var render = function() {
                                                     !ChildChildItem.isImage
                                                       ? _c("i", {
                                                           class:
-                                                            "fa nav_icon " +
+                                                            "fa nav_icon item-menu-child-two " +
                                                             ChildChildItem.icon
                                                         })
                                                       : _vm._e(),
@@ -14601,7 +14601,7 @@ var render = function() {
                                                     ChildChildItem.isImage
                                                       ? _c("img", {
                                                           staticClass:
-                                                            "nav_icon item-menu-child",
+                                                            "nav_icon item-menu-child-two",
                                                           attrs: {
                                                             src:
                                                               ChildChildItem.image

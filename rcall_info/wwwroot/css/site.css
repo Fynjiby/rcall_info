@@ -20,7 +20,11 @@
 }
 
 .item-menu-child{
-    margin-left: 10px;
+    margin-left: 15px;
+}
+
+.item-menu-child-two {
+    margin-left: 30px;
 }
 
 #profile-icon {

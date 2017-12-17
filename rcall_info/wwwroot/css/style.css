@@ -314,7 +314,7 @@ ul.nav.navbar-nav.navbar-right {
         z-index: -1;
         top: 0;
         left: 0;
-        right: 80%;
+        right: 0%;
         bottom: 0;
         background: #EBEBEB;
         -webkit-transform: scaleX(0);
@@ -350,7 +350,7 @@ ul.nav.navbar-nav.navbar-right {
 .hvr-bounce-to-right:hover i.nav_icon,
 .hvr-bounce-to-right:focus i.nav_icon,
 .hvr-bounce-to-right:active i.nav_icon {
-    color: #fff;
+    color: #999;
 }
 
 .nav > li > a i {
@@ -2762,10 +2762,6 @@ tr.table-row {
         background-color: #FFFFFF;
     }
 
-    .hvr-bounce-to-right:before {
-        right: 93%;
-    }
-
     h1 a.navbar-brand {
         width: 152px;
     }
@@ -2846,10 +2842,6 @@ tr.table-row {
 @media(max-width:480px) {
     .full-left {
         width: 60%;
-    }
-
-    .hvr-bounce-to-right:before {
-        right: 91%;
     }
 
     canvas#bar1, canvas#line1 {
@@ -3062,9 +3054,6 @@ tr.table-row {
         margin-right: 12px;
     }
 
-    .hvr-bounce-to-right:before {
-        right: 86%;
-    }
     /*--graph--*/
     canvas#bar1, canvas#line1 {
         width: 256px !important;

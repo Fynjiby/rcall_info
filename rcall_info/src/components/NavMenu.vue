@@ -32,8 +32,8 @@
                                     <ul v-if=childitem.haveChild v-show=childitem.open class="nav nav-second-level">
                                         <li v-for="ChildChildItem in childitem.childItems">
                                             <router-link v-if=!ChildChildItem.haveChild :to="ChildChildItem.link" class="hvr-bounce-to-right">
-                                                <i :class="'fa nav_icon ' + ChildChildItem.icon" v-if=!ChildChildItem.isImage />
-                                                <img class="nav_icon item-menu-child" :src="ChildChildItem.image" v-if=ChildChildItem.isImage />
+                                                <i :class="'fa nav_icon item-menu-child-two ' + ChildChildItem.icon" v-if=!ChildChildItem.isImage />
+                                                <img class="nav_icon item-menu-child-two" :src="ChildChildItem.image" v-if=ChildChildItem.isImage />
                                                 <span class="nav-label">{{ ChildChildItem.text }}</span>
                                             </router-link>                                            
                                         </li>
