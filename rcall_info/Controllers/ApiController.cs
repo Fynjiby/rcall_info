@@ -33,7 +33,7 @@ namespace rcall_info.Controllers
             List<ItemMenu> ElectronicsItems = new List<ItemMenu>
             {
                 new ItemMenu("/copters/parts/fc","Контроллеры","","fa-microchip"),
-                new ItemMenu("/copters/parts/psd","PDB","","fa-bolt"),
+                new ItemMenu("/copters/parts/pdb","PDB","","fa-bolt"),
                 new ItemMenu("/copters/parts/other","Периферия","","fa-compass"),
                 new ItemMenu("/copters/parts/light","Свет","","fa-lightbulb-o")
             };
@@ -48,10 +48,10 @@ namespace rcall_info.Controllers
             List<ItemMenu> FPVItems = new List<ItemMenu>
             {
                 new ItemMenu("/copters/parts/videoreceivers","Приемники","","fa-rss"),
-                new ItemMenu("/copters/parts/videotransmitters","Передатчики","/images/rctransmitter.svg"),
-                new ItemMenu("/copters/parts/cameras","Камеры","/images/prop.svg"),
-                new ItemMenu("/copters/parts/goggles","Очки, шлемы","/images/prop.svg"),
-                new ItemMenu("/copters/parts/antennas","Антенны","/images/prop.svg")
+                new ItemMenu("/copters/parts/videotransmitters","Передатчики","","fa-podcast"),
+                new ItemMenu("/copters/parts/cameras","Камеры","","fa-video-camera"),
+                new ItemMenu("/copters/parts/goggles","Очки, шлемы","/images/goggles.svg"),
+                new ItemMenu("/copters/parts/antennas","Антенны","/images/antenna.svg")
             };
 
             List<ItemMenu> RCItems = new List<ItemMenu>
@@ -63,8 +63,8 @@ namespace rcall_info.Controllers
 
             List<ItemMenu> BatteryItems = new List<ItemMenu>
             {
-                new ItemMenu("/copters/parts/battery","Аккумуляторы","","fa-microchip"),
-                new ItemMenu("/copters/parts/charger","Зарядные","/images/motor.png")
+                new ItemMenu("/copters/parts/battery","Аккумуляторы","","fa-battery-three-quarters"),
+                new ItemMenu("/copters/parts/charger","Зарядные","","fa-bolt")
             };
 
             List<ItemMenu> ComponentItems = new List<ItemMenu>
