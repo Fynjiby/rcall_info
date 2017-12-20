@@ -65,12 +65,11 @@
             this.fetchData()
         },
         watch: {
-            '$route.params.id': 'fetchData'
+            //'$route.params.id': 'fetchData'
         },
         methods: {
             fetchData() {
-                var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
-                this.$http.get('/api/' + pathGet).then((res) => {
+                this.$http.get('/api/start').then((res) => {
                     this.itemsMenu = res.body.itemsMenu
                 }).catch((ex) => console.log(ex))
             },

@@ -14353,14 +14353,13 @@ if (false) {(function () {
     },
 
     watch: {
-        '$route.params.id': 'fetchData'
+        //'$route.params.id': 'fetchData'
     },
     methods: {
         fetchData: function fetchData() {
             var _this = this;
 
-            var pathGet = this.$route.params.id != undefined ? this.$route.params.id : "start";
-            this.$http.get('/api/' + pathGet).then(function (res) {
+            this.$http.get('/api/start').then(function (res) {
                 _this.itemsMenu = res.body.itemsMenu;
             }).catch(function (ex) {
                 return console.log(ex);
