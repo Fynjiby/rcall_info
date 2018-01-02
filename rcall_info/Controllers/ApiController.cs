@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,7 +12,12 @@ namespace rcall_info.Controllers
     [Route("api")]
     public class ApiController : Controller
     {
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
+        public ApiController(IStringLocalizer<SharedResource> sharedLocalizer)
+        {
+            _sharedLocalizer = sharedLocalizer;
+        }
 
         [Route("start")]
         [HttpGet]
@@ -19,7 +25,7 @@ namespace rcall_info.Controllers
         {
             List<ItemMenu> ElectronicsItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/fc","Контроллеры","","fa-microchip"),
+                new ItemMenu("/parts/fc",_sharedLocalizer[SharedResource.GetNameRes("fc")],"","fa-microchip"),
                 new ItemMenu("/parts/pdb","PDB","","fa-bolt"),
                 new ItemMenu("/parts/other","Периферия","","fa-compass"),
                 new ItemMenu("/parts/light","Свет","","fa-lightbulb-o")
