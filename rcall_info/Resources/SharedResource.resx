@@ -117,10 +117,148 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accessories_en" xml:space="preserve">
+    <value>Accessories</value>
+  </data>
+  <data name="accessories_ru" xml:space="preserve">
+    <value>Периферия</value>
+  </data>
+  <data name="antennas_en" xml:space="preserve">
+    <value>Antennas</value>
+  </data>
+  <data name="antennas_ru" xml:space="preserve">
+    <value>Антенны</value>
+  </data>
+  <data name="batteries_en" xml:space="preserve">
+    <value>Batteries</value>
+  </data>
+  <data name="batteries_group_en" xml:space="preserve">
+    <value>Batteries/Chargers</value>
+  </data>
+  <data name="batteries_group_ru" xml:space="preserve">
+    <value>Аккумуляторы</value>
+  </data>
+  <data name="batteries_ru" xml:space="preserve">
+    <value>Аккумуляторы</value>
+  </data>
+  <data name="body_en" xml:space="preserve">
+    <value>Fuselage</value>
+  </data>
+  <data name="body_ru" xml:space="preserve">
+    <value>Фюзеляж</value>
+  </data>
+  <data name="cameras_en" xml:space="preserve">
+    <value>Cameras</value>
+  </data>
+  <data name="cameras_ru" xml:space="preserve">
+    <value>Камеры</value>
+  </data>
+  <data name="chargers_en" xml:space="preserve">
+    <value>Chargers</value>
+  </data>
+  <data name="chargers_ru" xml:space="preserve">
+    <value>Зарядные</value>
+  </data>
+  <data name="electronics_en" xml:space="preserve">
+    <value>Electronics</value>
+  </data>
+  <data name="electronics_ru" xml:space="preserve">
+    <value>Электроника</value>
+  </data>
+  <data name="events_en" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="events_ru" xml:space="preserve">
+    <value>События</value>
+  </data>
   <data name="fc_en" xml:space="preserve">
-    <value>FC</value>
+    <value>Flight Controllers</value>
   </data>
   <data name="fc_ru" xml:space="preserve">
     <value>Контроллеры</value>
+  </data>
+  <data name="frames_en" xml:space="preserve">
+    <value>Frames</value>
+  </data>
+  <data name="frames_ru" xml:space="preserve">
+    <value>Рамы</value>
+  </data>
+  <data name="goggles_en" xml:space="preserve">
+    <value>Goggles</value>
+  </data>
+  <data name="goggles_ru" xml:space="preserve">
+    <value>Очки, шлемы</value>
+  </data>
+  <data name="light_en" xml:space="preserve">
+    <value>Lighting</value>
+  </data>
+  <data name="light_ru" xml:space="preserve">
+    <value>Подсветка</value>
+  </data>
+  <data name="motors_accessories_en" xml:space="preserve">
+    <value>Motors/Accessories</value>
+  </data>
+  <data name="motors_accessories_ru" xml:space="preserve">
+    <value>ВМГ</value>
+  </data>
+  <data name="motors_en" xml:space="preserve">
+    <value>Motors</value>
+  </data>
+  <data name="motors_ru" xml:space="preserve">
+    <value>Моторы</value>
+  </data>
+  <data name="parts_en" xml:space="preserve">
+    <value>Parts</value>
+  </data>
+  <data name="parts_ru" xml:space="preserve">
+    <value>Комплектующие</value>
+  </data>
+  <data name="props_en" xml:space="preserve">
+    <value>Propellers</value>
+  </data>
+  <data name="props_ru" xml:space="preserve">
+    <value>Пропеллеры</value>
+  </data>
+  <data name="radiosystems_en" xml:space="preserve">
+    <value>Radio Systems</value>
+  </data>
+  <data name="radiosystems_ru" xml:space="preserve">
+    <value>Радио управление</value>
+  </data>
+  <data name="rcother_en" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="rcother_ru" xml:space="preserve">
+    <value>Прочее</value>
+  </data>
+  <data name="receivers_en" xml:space="preserve">
+    <value>Receivers</value>
+  </data>
+  <data name="receivers_ru" xml:space="preserve">
+    <value>Приемники</value>
+  </data>
+  <data name="servos_en" xml:space="preserve">
+    <value>Servos</value>
+  </data>
+  <data name="servos_ru" xml:space="preserve">
+    <value>Сервоприводы</value>
+  </data>
+  <data name="transmitters_en" xml:space="preserve">
+    <value>Transmitters</value>
+  </data>
+  <data name="transmitters_ru" xml:space="preserve">
+    <value>Передатчики</value>
+  </data>
+  <data name="videoreceivers_en" xml:space="preserve">
+    <value>Video RX</value>
+  </data>
+  <data name="videoreceivers_ru" xml:space="preserve">
+    <value>Приемники</value>
+  </data>
+  <data name="videotransmitters_en" xml:space="preserve">
+    <value>Video TX</value>
+  </data>
+  <data name="videotransmitters_ru" xml:space="preserve">
+    <value>Передатчики</value>
   </data>
 </root>

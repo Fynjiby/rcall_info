@@ -61,7 +61,169 @@ namespace rcall_info.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на FC.
+        ///   Ищет локализованную строку, похожую на Accessories.
+        /// </summary>
+        internal static string accessories_en {
+            get {
+                return ResourceManager.GetString("accessories_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Периферия.
+        /// </summary>
+        internal static string accessories_ru {
+            get {
+                return ResourceManager.GetString("accessories_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Antennas.
+        /// </summary>
+        internal static string antennas_en {
+            get {
+                return ResourceManager.GetString("antennas_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Антенны.
+        /// </summary>
+        internal static string antennas_ru {
+            get {
+                return ResourceManager.GetString("antennas_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Batteries.
+        /// </summary>
+        internal static string batteries_en {
+            get {
+                return ResourceManager.GetString("batteries_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Batteries/Chargers.
+        /// </summary>
+        internal static string batteries_group_en {
+            get {
+                return ResourceManager.GetString("batteries_group_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Аккумуляторы.
+        /// </summary>
+        internal static string batteries_group_ru {
+            get {
+                return ResourceManager.GetString("batteries_group_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Аккумуляторы.
+        /// </summary>
+        internal static string batteries_ru {
+            get {
+                return ResourceManager.GetString("batteries_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Fuselage.
+        /// </summary>
+        internal static string body_en {
+            get {
+                return ResourceManager.GetString("body_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фюзеляж.
+        /// </summary>
+        internal static string body_ru {
+            get {
+                return ResourceManager.GetString("body_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Cameras.
+        /// </summary>
+        internal static string cameras_en {
+            get {
+                return ResourceManager.GetString("cameras_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Камеры.
+        /// </summary>
+        internal static string cameras_ru {
+            get {
+                return ResourceManager.GetString("cameras_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Chargers.
+        /// </summary>
+        internal static string chargers_en {
+            get {
+                return ResourceManager.GetString("chargers_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Зарядные.
+        /// </summary>
+        internal static string chargers_ru {
+            get {
+                return ResourceManager.GetString("chargers_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Electronics.
+        /// </summary>
+        internal static string electronics_en {
+            get {
+                return ResourceManager.GetString("electronics_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Электроника.
+        /// </summary>
+        internal static string electronics_ru {
+            get {
+                return ResourceManager.GetString("electronics_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Events.
+        /// </summary>
+        internal static string events_en {
+            get {
+                return ResourceManager.GetString("events_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на События.
+        /// </summary>
+        internal static string events_ru {
+            get {
+                return ResourceManager.GetString("events_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Flight Controllers.
         /// </summary>
         internal static string fc_en {
             get {
@@ -75,6 +237,258 @@ namespace rcall_info.Resources {
         internal static string fc_ru {
             get {
                 return ResourceManager.GetString("fc_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Frames.
+        /// </summary>
+        internal static string frames_en {
+            get {
+                return ResourceManager.GetString("frames_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рамы.
+        /// </summary>
+        internal static string frames_ru {
+            get {
+                return ResourceManager.GetString("frames_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Goggles.
+        /// </summary>
+        internal static string goggles_en {
+            get {
+                return ResourceManager.GetString("goggles_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Очки, шлемы.
+        /// </summary>
+        internal static string goggles_ru {
+            get {
+                return ResourceManager.GetString("goggles_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Lighting.
+        /// </summary>
+        internal static string light_en {
+            get {
+                return ResourceManager.GetString("light_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подсветка.
+        /// </summary>
+        internal static string light_ru {
+            get {
+                return ResourceManager.GetString("light_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Motors/Accessories.
+        /// </summary>
+        internal static string motors_accessories_en {
+            get {
+                return ResourceManager.GetString("motors_accessories_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ВМГ.
+        /// </summary>
+        internal static string motors_accessories_ru {
+            get {
+                return ResourceManager.GetString("motors_accessories_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Motors.
+        /// </summary>
+        internal static string motors_en {
+            get {
+                return ResourceManager.GetString("motors_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Моторы.
+        /// </summary>
+        internal static string motors_ru {
+            get {
+                return ResourceManager.GetString("motors_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Parts.
+        /// </summary>
+        internal static string parts_en {
+            get {
+                return ResourceManager.GetString("parts_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Комплектующие.
+        /// </summary>
+        internal static string parts_ru {
+            get {
+                return ResourceManager.GetString("parts_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Propellers.
+        /// </summary>
+        internal static string props_en {
+            get {
+                return ResourceManager.GetString("props_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пропеллеры.
+        /// </summary>
+        internal static string props_ru {
+            get {
+                return ResourceManager.GetString("props_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Radio Systems.
+        /// </summary>
+        internal static string radiosystems_en {
+            get {
+                return ResourceManager.GetString("radiosystems_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Радио управление.
+        /// </summary>
+        internal static string radiosystems_ru {
+            get {
+                return ResourceManager.GetString("radiosystems_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Other.
+        /// </summary>
+        internal static string rcother_en {
+            get {
+                return ResourceManager.GetString("rcother_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Прочее.
+        /// </summary>
+        internal static string rcother_ru {
+            get {
+                return ResourceManager.GetString("rcother_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Receivers.
+        /// </summary>
+        internal static string receivers_en {
+            get {
+                return ResourceManager.GetString("receivers_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Приемники.
+        /// </summary>
+        internal static string receivers_ru {
+            get {
+                return ResourceManager.GetString("receivers_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Servos.
+        /// </summary>
+        internal static string servos_en {
+            get {
+                return ResourceManager.GetString("servos_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сервоприводы.
+        /// </summary>
+        internal static string servos_ru {
+            get {
+                return ResourceManager.GetString("servos_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Transmitters.
+        /// </summary>
+        internal static string transmitters_en {
+            get {
+                return ResourceManager.GetString("transmitters_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Передатчики.
+        /// </summary>
+        internal static string transmitters_ru {
+            get {
+                return ResourceManager.GetString("transmitters_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Video RX.
+        /// </summary>
+        internal static string videoreceivers_en {
+            get {
+                return ResourceManager.GetString("videoreceivers_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Приемники.
+        /// </summary>
+        internal static string videoreceivers_ru {
+            get {
+                return ResourceManager.GetString("videoreceivers_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Video TX.
+        /// </summary>
+        internal static string videotransmitters_en {
+            get {
+                return ResourceManager.GetString("videotransmitters_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Передатчики.
+        /// </summary>
+        internal static string videotransmitters_ru {
+            get {
+                return ResourceManager.GetString("videotransmitters_ru", resourceCulture);
             }
         }
     }

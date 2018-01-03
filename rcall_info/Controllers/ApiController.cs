@@ -27,54 +27,54 @@ namespace rcall_info.Controllers
             {
                 new ItemMenu("/parts/fc",_sharedLocalizer[SharedResource.GetNameRes("fc")],"","fa-microchip"),
                 new ItemMenu("/parts/pdb","PDB","","fa-bolt"),
-                new ItemMenu("/parts/other","Периферия","","fa-compass"),
-                new ItemMenu("/parts/light","Свет","","fa-lightbulb-o")
+                new ItemMenu("/parts/other",_sharedLocalizer[SharedResource.GetNameRes("accessories")],"","fa-compass"),
+                new ItemMenu("/parts/light",_sharedLocalizer[SharedResource.GetNameRes("light")],"","fa-lightbulb-o")
             };
 
             List<ItemMenu> MotorsItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/motors","Моторы","/images/motor.png"),
+                new ItemMenu("/parts/motors",_sharedLocalizer[SharedResource.GetNameRes("motors")],"/images/motor.png"),
                 new ItemMenu("/parts/esc","ESC","","fa-microchip"),
-                new ItemMenu("/parts/props","Пропеллеры","/images/prop.svg"),
-                new ItemMenu("/parts/servos","Сервоприводы","","fa-cogs")
+                new ItemMenu("/parts/props",_sharedLocalizer[SharedResource.GetNameRes("props")],"/images/prop.svg"),
+                new ItemMenu("/parts/servos",_sharedLocalizer[SharedResource.GetNameRes("servos")],"","fa-cogs")
             };
 
             List<ItemMenu> FPVItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/videoreceivers","Приемники","","fa-rss"),
-                new ItemMenu("/parts/videotransmitters","Передатчики","","fa-podcast"),
-                new ItemMenu("/parts/cameras","Камеры","","fa-video-camera"),
-                new ItemMenu("/parts/goggles","Очки, шлемы","/images/goggles.svg"),
-                new ItemMenu("/parts/antennas","Антенны","/images/antenna.svg")
+                new ItemMenu("/parts/videotransmitters",_sharedLocalizer[SharedResource.GetNameRes("videotransmitters")],"","fa-podcast"),
+                new ItemMenu("/parts/videoreceivers",_sharedLocalizer[SharedResource.GetNameRes("videoreceivers")],"","fa-rss"),                
+                new ItemMenu("/parts/cameras",_sharedLocalizer[SharedResource.GetNameRes("cameras")],"","fa-video-camera"),
+                new ItemMenu("/parts/goggles",_sharedLocalizer[SharedResource.GetNameRes("goggles")],"/images/goggles.svg"),
+                new ItemMenu("/parts/antennas",_sharedLocalizer[SharedResource.GetNameRes("antennas")],"/images/antenna.svg")
             };
 
             List<ItemMenu> RCItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/transmitters","Передатчики","/images/rctransmitter.svg"),
-                new ItemMenu("/parts/receivers","Приемники","","fa-rss"),
-                new ItemMenu("/parts/rcother","Прочее","","fa-dot-circle-o")
+                new ItemMenu("/parts/transmitters",_sharedLocalizer[SharedResource.GetNameRes("transmitters")],"/images/rctransmitter.svg"),
+                new ItemMenu("/parts/receivers",_sharedLocalizer[SharedResource.GetNameRes("receivers")],"","fa-rss"),
+                new ItemMenu("/parts/rcother",_sharedLocalizer[SharedResource.GetNameRes("rcother")],"","fa-dot-circle-o")
             };
 
             List<ItemMenu> BatteryItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/battery","Аккумуляторы","","fa-battery-three-quarters"),
-                new ItemMenu("/parts/charger","Зарядные","","fa-bolt")
+                new ItemMenu("/parts/batteries",_sharedLocalizer[SharedResource.GetNameRes("batteries")],"","fa-battery-three-quarters"),
+                new ItemMenu("/parts/chargers",_sharedLocalizer[SharedResource.GetNameRes("chargers")],"","fa-bolt")
             };
 
             List<ItemMenu> ComponentItems = new List<ItemMenu>
             {
-                new ItemMenu("/parts/flams","Рамы","/images/quad.svg"),
-                new ItemMenu("/parts/body","Фюзеляж","/images/plane.svg"),
-                new ItemMenu("","Электроника","","fa-microchip",ElectronicsItems),
-                new ItemMenu("","ВМГ","","fa-superpowers",MotorsItems),
-                new ItemMenu("","Радио управление","","fa-wifi",RCItems),
+                new ItemMenu("/parts/frames",_sharedLocalizer[SharedResource.GetNameRes("frames")],"/images/quad.svg"),
+                new ItemMenu("/parts/body",_sharedLocalizer[SharedResource.GetNameRes("body")],"/images/plane.svg"),
+                new ItemMenu("",_sharedLocalizer[SharedResource.GetNameRes("electronics")],"","fa-microchip",ElectronicsItems),
+                new ItemMenu("",_sharedLocalizer[SharedResource.GetNameRes("motors_accessories")],"","fa-superpowers",MotorsItems),
+                new ItemMenu("",_sharedLocalizer[SharedResource.GetNameRes("radiosystems")],"","fa-wifi",RCItems),
                 new ItemMenu("","FPV","","fa-podcast",FPVItems),
-                new ItemMenu("","Аккумуляторы","","fa-battery-full",BatteryItems)
+                new ItemMenu("",_sharedLocalizer[SharedResource.GetNameRes("batteries_group")],"","fa-battery-full",BatteryItems)
             };
             List<ItemMenu> itemsMenu = new List<ItemMenu>
             {
-                new ItemMenu("/events","События","","fa-calendar"),
-                new ItemMenu("","Комплектующие","","fa-cogs",ComponentItems,true)
+                new ItemMenu("/events",_sharedLocalizer[SharedResource.GetNameRes("events")],"","fa-calendar"),
+                new ItemMenu("",_sharedLocalizer[SharedResource.GetNameRes("parts")],"","fa-cogs",ComponentItems,true)
             };
             return Json(new
             {
