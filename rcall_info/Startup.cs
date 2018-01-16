@@ -11,8 +11,11 @@ using System.Globalization;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Localization;
+using Microsoft.EntityFrameworkCore;
+using fpv_info.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace rcall_info
+namespace fpv_info
 {
     public class Startup
     {
@@ -26,6 +29,17 @@ namespace rcall_info
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // получаем строку подключения из файла конфигурации
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // добавляем контекст MobileContext в качестве сервиса в приложение
+            
+            services.AddIdentity<User, IdentityRole>()
+                            .AddEntityFrameworkStores<ApplicationContext>();
+            services.AddDbContext<PartsContext>(options =>
+                            options.UseSqlServer(connection));
+            services.AddDbContext<ApplicationContext>(options =>
+                            options.UseSqlServer(connection));
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc()
                 .AddDataAnnotationsLocalization(options => {
@@ -66,6 +80,8 @@ namespace rcall_info
             app.UseRequestLocalization(locOptions.Value);
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

@@ -1,6 +1,6 @@
 using System;
 
-namespace rcall_info.Models
+namespace fpv_info.Models
 {
     public class ErrorViewModel
     {

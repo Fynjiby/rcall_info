@@ -9,7 +9,7 @@ using Microsoft.Extensions.Localization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace rcall_info.Controllers
+namespace fpv_info.Controllers
 {
     public class StartController : Controller
     {

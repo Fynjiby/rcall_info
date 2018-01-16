@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using rcall_info.Models;
+using fpv_info.Models;
 
-namespace rcall_info.Controllers
+namespace fpv_info.Controllers
 {
     public class HomeController : Controller
     {

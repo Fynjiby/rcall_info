@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace rcall_info.Resources {
+namespace fpv_info.Resources {
     using System;
     
     

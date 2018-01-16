@@ -7,7 +7,7 @@ using Microsoft.Extensions.Localization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace rcall_info.Controllers
+namespace fpv_info.Controllers
 {
     [Route("api")]
     public class ApiController : Controller
