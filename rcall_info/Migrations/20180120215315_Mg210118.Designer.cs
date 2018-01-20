@@ -11,9 +11,10 @@ using System;
 namespace fpv_info.Migrations
 {
     [DbContext(typeof(PartsContext))]
-    partial class PartsContextModelSnapshot : ModelSnapshot
+    [Migration("20180120215315_Mg210118")]
+    partial class Mg210118
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

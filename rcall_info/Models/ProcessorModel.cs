@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+
 namespace fpv_info.Models
 {
-    public class Company
+    public class ProcessorModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

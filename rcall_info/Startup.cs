@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.EntityFrameworkCore;
 using fpv_info.Models;
 using Microsoft.AspNetCore.Identity;
+using fpv_info.Util;
 
 namespace fpv_info
 {
@@ -32,9 +33,15 @@ namespace fpv_info
             // получаем строку подключения из файла конфигурации
             string connection = Configuration.GetConnectionString("DefaultConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
-            
+
+            services.AddTransient<IUserValidator<User>, CustomUserValidator>();
+
+            services.AddTransient<IPasswordValidator<User>,
+                                CustomPasswordValidator>(serv => new CustomPasswordValidator(5));
+
             services.AddIdentity<User, IdentityRole>()
-                            .AddEntityFrameworkStores<ApplicationContext>();
+                            .AddEntityFrameworkStores<ApplicationContext>()
+                            .AddDefaultTokenProviders();
             services.AddDbContext<PartsContext>(options =>
                             options.UseSqlServer(connection));
             services.AddDbContext<ApplicationContext>(options =>
@@ -42,7 +49,8 @@ namespace fpv_info
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc()
-                .AddDataAnnotationsLocalization(options => {
+                .AddDataAnnotationsLocalization(options =>
+                {
                     options.DataAnnotationLocalizerProvider = (type, factory) =>
                         factory.Create(typeof(SharedResource));
                 })
