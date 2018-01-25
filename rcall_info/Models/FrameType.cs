@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 
 namespace fpv_info.Models
 {
-    public class FrameType
+    public class FrameType : BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        
     }
 }

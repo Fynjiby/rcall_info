@@ -11,8 +11,12 @@ namespace fpv_info.Models
         public string Description_ru { get; set; }
         public Company Manufacturer { get; set; }
         public ICollection<FileModel> Images { get; set; }
+        public ICollection<Link> MediaLinks { get; set; }
+        public ICollection<Link> SourceLinks { get; set; }
+        public ICollection<Link> StoreLinks { get; set; }
         public float Weight { get; set; }
         public bool IsCompared { get; set; }
+        public string Сomment { get; set; }
 
         public Part() => IsCompared = true;
 

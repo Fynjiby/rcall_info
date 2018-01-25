@@ -1,10 +1,8 @@
 
 namespace fpv_info.Models
 {
-    public class FileModel
+    public class FileModel : BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string Path { get; set; }
         public string Alt { get; set; }
     }
