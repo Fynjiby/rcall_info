@@ -42,6 +42,8 @@ namespace fpv_info
             services.AddIdentity<User, IdentityRole>()
                             .AddEntityFrameworkStores<ApplicationContext>()
                             .AddDefaultTokenProviders();
+            services.AddDbContext<EventsContext>(options =>
+                            options.UseSqlServer(connection));
             services.AddDbContext<PartsContext>(options =>
                             options.UseSqlServer(connection));
             services.AddDbContext<ApplicationContext>(options =>

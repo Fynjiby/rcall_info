@@ -16,6 +16,7 @@ namespace fpv_info.Models
         public ICollection<Link> StoreLinks { get; set; }
         public float Weight { get; set; }
         public bool IsCompared { get; set; }
+        public bool InArchive { get; set; }
         public string Сomment { get; set; }
 
         public Part() => IsCompared = true;

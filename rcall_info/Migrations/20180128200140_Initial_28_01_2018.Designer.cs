@@ -11,9 +11,10 @@ using System;
 namespace fpv_info.Migrations
 {
     [DbContext(typeof(PartsContext))]
-    partial class PartsContextModelSnapshot : ModelSnapshot
+    [Migration("20180128200140_Initial_28_01_2018")]
+    partial class Initial_28_01_2018
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +29,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_en");
 
                     b.Property<string>("Description_ru");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -82,8 +81,6 @@ namespace fpv_info.Migrations
                     b.Property<int?>("FrequencyId");
 
                     b.Property<float>("Gain");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -161,8 +158,6 @@ namespace fpv_info.Migrations
 
                     b.Property<int?>("DischargeRateId");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<int?>("ManufacturerId");
@@ -231,8 +226,6 @@ namespace fpv_info.Migrations
 
                     b.Property<int?>("ImageSensorId");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<int?>("ManufacturerId");
@@ -296,8 +289,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Dimension");
 
                     b.Property<string>("DischargeCurrentRange");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -414,8 +405,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Dimensions");
 
                     b.Property<int?>("FirmwareId");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<int?>("InstallDimensionId");
 
@@ -585,8 +574,6 @@ namespace fpv_info.Migrations
 
                     b.Property<int?>("GyroId");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<int?>("InstallDimensionId");
 
                     b.Property<bool>("IsCompared");
@@ -652,8 +639,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_en");
 
                     b.Property<string>("Description_ru");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<int?>("InstallDimensionMotorId");
 
@@ -725,8 +710,6 @@ namespace fpv_info.Migrations
 
                     b.Property<string>("Description_ru");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<int?>("ManufacturerId");
@@ -786,8 +769,6 @@ namespace fpv_info.Migrations
                     b.Property<int?>("FOVId");
 
                     b.Property<string>("IPD");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -886,8 +867,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_en");
 
                     b.Property<string>("Description_ru");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -1241,8 +1220,6 @@ namespace fpv_info.Migrations
 
                     b.Property<float>("Height");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<int?>("InstallDimensionId");
 
                     b.Property<bool>("IsCompared");
@@ -1304,8 +1281,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_ru");
 
                     b.Property<string>("Dimensions");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<int?>("InputVoltageId");
 
@@ -1391,8 +1366,6 @@ namespace fpv_info.Migrations
 
                     b.Property<string>("Description_ru");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<int?>("ManufacturerId");
@@ -1434,8 +1407,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_en");
 
                     b.Property<string>("Description_ru");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -1497,8 +1468,6 @@ namespace fpv_info.Migrations
 
                     b.Property<int?>("FrequencyId");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<int?>("ManufacturerId");
@@ -1540,8 +1509,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_ru");
 
                     b.Property<string>("Dimension");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -1594,8 +1561,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Description_en");
 
                     b.Property<string>("Description_ru");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
@@ -1657,8 +1622,6 @@ namespace fpv_info.Migrations
 
                     b.Property<int?>("FrequencyId");
 
-                    b.Property<bool>("InArchive");
-
                     b.Property<bool>("IsCompared");
 
                     b.Property<bool>("LowBand");
@@ -1708,8 +1671,6 @@ namespace fpv_info.Migrations
                     b.Property<string>("Dimension");
 
                     b.Property<int?>("FrequencyId");
-
-                    b.Property<bool>("InArchive");
 
                     b.Property<bool>("IsCompared");
 
