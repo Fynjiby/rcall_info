@@ -1,0 +1,57 @@
+@model fpv_info.Models.ManagerModels.EventsManagerModel
+
+<div class="blank">
+    <div class="blank-page">
+        <form asp-action="create" asp-controller="eventsManager">
+            <div class="form-group">
+                <label asp-for="Event.EventDate" class="control-label">@ViewData["date"]</label>
+                <input type="datetime" asp-for="Event.EventDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EventTypes_id" class="control-label">@ViewData["eventType"]</label>
+                <div>
+                    @Html.DropDownListFor(model => model.EventTypes_id, Model.EventTypes, new { @class = "form-control" })
+                    <a asp-action="CreateType">@ViewData["add"]</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Title_en" class="control-label">@ViewData["titleEn"]</label>
+                <input type="text" asp-for="Event.Title_en" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Title_ru" class="control-label">@ViewData["titleRu"]</label>
+                <input type="text" asp-for="Event.Title_ru" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Description_en" class="control-label">@ViewData["descriptionEn"]</label>
+                <input type="text" asp-for="Event.Description_en" class="form-control, tinymce_text" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Description_ru" class="control-label">@ViewData["descriptionRu"]</label>
+                <input type="text" asp-for="Event.Description_ru" class="form-control, tinymce_text" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        tinymce.init({
+            selector: '.tinymce_text',
+            height: 500,
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste imagetools wordcount"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            content_css: [
+                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                '//www.tinymce.com/css/codepen.min.css'
+            ]
+        });</script>
+}

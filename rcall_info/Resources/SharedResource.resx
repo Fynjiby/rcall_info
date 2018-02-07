@@ -123,6 +123,12 @@
   <data name="accessories_ru" xml:space="preserve">
     <value>Периферия</value>
   </data>
+  <data name="add_en" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="add_ru" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
   <data name="antennas_en" xml:space="preserve">
     <value>Antennas</value>
   </data>
@@ -159,6 +165,42 @@
   <data name="chargers_ru" xml:space="preserve">
     <value>Зарядные</value>
   </data>
+  <data name="date_en" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="date_ru" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="delete_en" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="delete_ru" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="descriptionEn_en" xml:space="preserve">
+    <value>Description (eng.)</value>
+  </data>
+  <data name="descriptionEn_ru" xml:space="preserve">
+    <value>Описание (англ.)</value>
+  </data>
+  <data name="descriptionRu_en" xml:space="preserve">
+    <value>Description (ru.)</value>
+  </data>
+  <data name="descriptionRu_ru" xml:space="preserve">
+    <value>Описание (русский)</value>
+  </data>
+  <data name="details_en" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="details_ru" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="edit_en" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="edit_ru" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
   <data name="electronics_en" xml:space="preserve">
     <value>Electronics</value>
   </data>
@@ -170,6 +212,12 @@
   </data>
   <data name="events_ru" xml:space="preserve">
     <value>События</value>
+  </data>
+  <data name="eventType_en" xml:space="preserve">
+    <value>Event type</value>
+  </data>
+  <data name="eventType_ru" xml:space="preserve">
+    <value>Тип события</value>
   </data>
   <data name="fc_en" xml:space="preserve">
     <value>Flight Controllers</value>
@@ -207,6 +255,12 @@
   <data name="motors_ru" xml:space="preserve">
     <value>Моторы</value>
   </data>
+  <data name="name_en" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="name_ru" xml:space="preserve">
+    <value>Имя</value>
+  </data>
   <data name="parts_en" xml:space="preserve">
     <value>Parts</value>
   </data>
@@ -242,6 +296,18 @@
   </data>
   <data name="servos_ru" xml:space="preserve">
     <value>Сервоприводы</value>
+  </data>
+  <data name="titleEn_en" xml:space="preserve">
+    <value>Title (eng.)</value>
+  </data>
+  <data name="titleEn_ru" xml:space="preserve">
+    <value>Заголовок (англ.)</value>
+  </data>
+  <data name="titleRu_en" xml:space="preserve">
+    <value>Title (ru.)</value>
+  </data>
+  <data name="titleRu_ru" xml:space="preserve">
+    <value>Заголовок (русский)</value>
   </data>
   <data name="transmitters_en" xml:space="preserve">
     <value>Transmitters</value>

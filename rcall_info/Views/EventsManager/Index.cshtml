@@ -1,0 +1,25 @@
+@model IEnumerable<fpv_info.Models.Event>
+
+<div class="blank">
+    <div class="blank-page">
+        <a asp-action="Create">@ViewData["add"]</a>
+        <table class="table">
+            <thead><tr><th>@ViewData["date"]</th><th>@ViewData["titleEn"]</th><th>@ViewData["titleRu"]</th></tr></thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EventDate</td>
+                    <td>@item.Title_en</td>
+                    <td>@item.Title_ru</td>
+                    <td>
+                        <a asp-action="Details" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["details"]</a> |
+                        <a asp-action="Edit" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["edit"]</a> |
+                        <a asp-action="Delete" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["delete"]</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+@model fpv_info.Models.EventType
+
+<div class="blank">
+    <div class="blank-page">
+        <form asp-action="createType" asp-controller="eventsManager">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">@ViewData["name"]</label>
+                <input type="text" asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+

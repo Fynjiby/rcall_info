@@ -39,7 +39,7 @@ namespace fpv_info.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("rcall_info.Resources.SharedResource", typeof(SharedResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("fpv_info.Resources.SharedResource", typeof(SharedResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -75,6 +75,24 @@ namespace fpv_info.Resources {
         internal static string accessories_ru {
             get {
                 return ResourceManager.GetString("accessories_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add.
+        /// </summary>
+        internal static string add_en {
+            get {
+                return ResourceManager.GetString("add_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить.
+        /// </summary>
+        internal static string add_ru {
+            get {
+                return ResourceManager.GetString("add_ru", resourceCulture);
             }
         }
         
@@ -187,6 +205,114 @@ namespace fpv_info.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Date.
+        /// </summary>
+        internal static string date_en {
+            get {
+                return ResourceManager.GetString("date_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дата.
+        /// </summary>
+        internal static string date_ru {
+            get {
+                return ResourceManager.GetString("date_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Delete.
+        /// </summary>
+        internal static string delete_en {
+            get {
+                return ResourceManager.GetString("delete_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Удалить.
+        /// </summary>
+        internal static string delete_ru {
+            get {
+                return ResourceManager.GetString("delete_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Description (eng.).
+        /// </summary>
+        internal static string descriptionEn_en {
+            get {
+                return ResourceManager.GetString("descriptionEn_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Описание (англ.).
+        /// </summary>
+        internal static string descriptionEn_ru {
+            get {
+                return ResourceManager.GetString("descriptionEn_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Description (ru.).
+        /// </summary>
+        internal static string descriptionRu_en {
+            get {
+                return ResourceManager.GetString("descriptionRu_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Описание (русский).
+        /// </summary>
+        internal static string descriptionRu_ru {
+            get {
+                return ResourceManager.GetString("descriptionRu_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Details.
+        /// </summary>
+        internal static string details_en {
+            get {
+                return ResourceManager.GetString("details_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подробнее.
+        /// </summary>
+        internal static string details_ru {
+            get {
+                return ResourceManager.GetString("details_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit.
+        /// </summary>
+        internal static string edit_en {
+            get {
+                return ResourceManager.GetString("edit_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Изменить.
+        /// </summary>
+        internal static string edit_ru {
+            get {
+                return ResourceManager.GetString("edit_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Electronics.
         /// </summary>
         internal static string electronics_en {
@@ -219,6 +345,24 @@ namespace fpv_info.Resources {
         internal static string events_ru {
             get {
                 return ResourceManager.GetString("events_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Event type.
+        /// </summary>
+        internal static string eventType_en {
+            get {
+                return ResourceManager.GetString("eventType_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип события.
+        /// </summary>
+        internal static string eventType_ru {
+            get {
+                return ResourceManager.GetString("eventType_ru", resourceCulture);
             }
         }
         
@@ -331,6 +475,24 @@ namespace fpv_info.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Name.
+        /// </summary>
+        internal static string name_en {
+            get {
+                return ResourceManager.GetString("name_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя.
+        /// </summary>
+        internal static string name_ru {
+            get {
+                return ResourceManager.GetString("name_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Parts.
         /// </summary>
         internal static string parts_en {
@@ -435,6 +597,42 @@ namespace fpv_info.Resources {
         internal static string servos_ru {
             get {
                 return ResourceManager.GetString("servos_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Title (eng.).
+        /// </summary>
+        internal static string titleEn_en {
+            get {
+                return ResourceManager.GetString("titleEn_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заголовок (англ.).
+        /// </summary>
+        internal static string titleEn_ru {
+            get {
+                return ResourceManager.GetString("titleEn_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Title (ru.).
+        /// </summary>
+        internal static string titleRu_en {
+            get {
+                return ResourceManager.GetString("titleRu_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заголовок (русский).
+        /// </summary>
+        internal static string titleRu_ru {
+            get {
+                return ResourceManager.GetString("titleRu_ru", resourceCulture);
             }
         }
         
