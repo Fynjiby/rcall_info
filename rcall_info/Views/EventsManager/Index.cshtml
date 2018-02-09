@@ -1,4 +1,4 @@
-@model IEnumerable<fpv_info.Models.Event>
+@model fpv_info.Models.ManagerModels.IndexEventManagerViewModel
 
 <div class="blank">
     <div class="blank-page">
@@ -6,7 +6,7 @@
         <table class="table">
             <thead><tr><th>@ViewData["date"]</th><th>@ViewData["titleEn"]</th><th>@ViewData["titleRu"]</th></tr></thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Events)
             {
                 <tr>
                     <td>@item.EventDate</td>
@@ -21,5 +21,23 @@
                 }
             </tbody>
         </table>
+        @if (Model.PageViewModel.HasPreviousPage)
+        {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-default btn">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+        }
+        @if (Model.PageViewModel.HasNextPage)
+        {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-default btn">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+        }
     </div>
 </div>

@@ -327,4 +327,10 @@
   <data name="videotransmitters_ru" xml:space="preserve">
     <value>Передатчики</value>
   </data>
+  <data name="path_en" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="path_ru" xml:space="preserve">
+    <value>Путь</value>
+  </data>
 </root>

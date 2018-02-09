@@ -1,17 +1,18 @@
 @model fpv_info.Models.Event
-@{
-        ViewBag.Title = Model.Title_ru;
-}
-<h2>@Model.Title_ru</h2>
-<h2>@Model.Title_en</h2>
-<h2>@Model.EventDate</h2>
-<h2>@Model.Type.Name</h2>
-<div>
-    <dl class="dl-horizontal">
-        <dt>Текст русский</dt>
-        <dd>@Html.Raw(Model.Description_ru)</dd>
-
-        <dt>Текст eng</dt>
-        <dd>@Html.Raw(Model.Description_en)</dd>
-    </dl>
+<div class="blank">
+    <div class="blank-page">
+        <h6>@Model.EventDate</h6>
+        <h3>@Model.Title_ru / @Model.Title_en</h3>
+        <br />
+        <div>
+            <div>
+                @Html.Raw(Model.Description_ru)
+            </div>
+            <br />
+            <br />
+            <div>
+                @Html.Raw(Model.Description_en)
+            </div>
+        </div>        
+    </div>
 </div>

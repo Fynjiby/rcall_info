@@ -8,6 +8,10 @@
                 <input type="text" asp-for="Name" class="form-control" />
             </div>
             <div class="form-group">
+                <label asp-for="PathImage" class="control-label">@ViewData["path"]</label>
+                <input type="text" asp-for="PathImage" class="form-control" />
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>

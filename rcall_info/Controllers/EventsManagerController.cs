@@ -23,7 +23,7 @@ namespace fpv_info.Controllers
             _sharedLocalizer = sharedLocalizer;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
             ViewData["add"] = _sharedLocalizer[SharedResource.GetNameRes("add")];
             ViewData["date"] = _sharedLocalizer[SharedResource.GetNameRes("date")];
@@ -32,7 +32,21 @@ namespace fpv_info.Controllers
             ViewData["details"] = _sharedLocalizer[SharedResource.GetNameRes("details")];
             ViewData["edit"] = _sharedLocalizer[SharedResource.GetNameRes("edit")];
             ViewData["delete"] = _sharedLocalizer[SharedResource.GetNameRes("delete")];
-            return View(await EventsContext.Events.ToListAsync());
+            
+            int pageSize = 25;
+
+            IQueryable<Event> source = EventsContext.Events;
+            var count = await source.CountAsync();
+            var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexEventManagerViewModel viewModel = new IndexEventManagerViewModel
+            {
+                PageViewModel = pageViewModel,
+                Events = items
+            };
+            return View(viewModel);
+
         }
         public IActionResult Create()
         {
@@ -77,14 +91,45 @@ namespace fpv_info.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            return await FindModelReturnToView(id);
+            Event find_event;
+            if (id != null)
+            {
+                find_event = await EventsContext.Events.Include(e => e.Type).FirstOrDefaultAsync(p => p.Id == id);
+                if (find_event == null)
+                    return NotFound();
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+            ViewData["add"] = _sharedLocalizer[SharedResource.GetNameRes("add")];
+            ViewData["date"] = _sharedLocalizer[SharedResource.GetNameRes("date")];
+            ViewData["titleEn"] = _sharedLocalizer[SharedResource.GetNameRes("titleEn")];
+            ViewData["titleRu"] = _sharedLocalizer[SharedResource.GetNameRes("titleRu")];
+            ViewData["descriptionEn"] = _sharedLocalizer[SharedResource.GetNameRes("descriptionEn")];
+            ViewData["descriptionRu"] = _sharedLocalizer[SharedResource.GetNameRes("descriptionEn")];
+            ViewData["eventType"] = _sharedLocalizer[SharedResource.GetNameRes("eventType")];
+            List<EventType> event_types = EventsContext.EventTypes.ToList();            
+            EventsManagerModel viewModel = new EventsManagerModel
+            {
+                Event = find_event,
+                EventTypes = new SelectList(event_types, "Id", "Name")
+            };
+
+            return View(viewModel);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Event edited_event)
+        public async Task<IActionResult> Edit(EventsManagerModel edited_event)
         {
-            EventsContext.Events.Update(edited_event);
+            Event event_to_update = edited_event.Event;
+            EventType find_type = await EventsContext.EventTypes.FirstOrDefaultAsync(p => p.Id == edited_event.EventTypes_id);
+            event_to_update.Type = find_type;
+            EventsContext.Events.Update(event_to_update);
             await EventsContext.SaveChangesAsync();
             return RedirectToAction("Index");
+
         }
 
         [HttpGet]
@@ -110,6 +155,7 @@ namespace fpv_info.Controllers
         public IActionResult CreateType()
         {
             ViewData["name"] = _sharedLocalizer[SharedResource.GetNameRes("name")];
+            ViewData["path"] = _sharedLocalizer[SharedResource.GetNameRes("path")];
             return View(new EventType());
         }
         [HttpPost]

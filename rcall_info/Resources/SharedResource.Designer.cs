@@ -511,6 +511,24 @@ namespace fpv_info.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Path.
+        /// </summary>
+        internal static string path_en {
+            get {
+                return ResourceManager.GetString("path_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Путь.
+        /// </summary>
+        internal static string path_ru {
+            get {
+                return ResourceManager.GetString("path_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Propellers.
         /// </summary>
         internal static string props_en {

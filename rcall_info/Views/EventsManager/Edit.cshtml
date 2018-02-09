@@ -1,37 +1,47 @@
-@model fpv_info.Models.Event
-@{
-        ViewBag.Title = "Редактирование события";
-}
-<form asp-action="edit" asp-controller="eventsManager" asp-route-id="@Model.Id">
-    <div class="form-group">
-        <label asp-for="EventDate" class="control-label">Дата</label>
-        <input type="datetime" asp-for="EventDate" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Title_en" class="control-label">Заголовок англ.</label>
-        <input type="text" asp-for="Title_en" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Title_ru" class="control-label">Заголовок русский</label>
-        <input type="text" asp-for="Title_ru" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description_en" class="control-label">Описание англ.</label>
-        <input type="text" asp-for="Description_en" class="form-control, tinymce_text" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description_ru" class="control-label">Описание русский</label>
-        <input type="text" asp-for="Description_ru" class="form-control, tinymce_text" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Send" class="btn btn-default" />
-    </div>
-</form>
+@model fpv_info.Models.ManagerModels.EventsManagerModel
 
+<div class="blank">
+    <div class="blank-page">
+        <form asp-action="edit" asp-controller="eventsManager">
+            <input type="hidden" asp-for="Event.Id"/>
+            <div class="form-group">
+                <label asp-for="Event.EventDate" class="control-label">@ViewData["date"]</label>
+                <input type="datetime" asp-for="Event.EventDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EventTypes_id" class="control-label">@ViewData["eventType"]</label>
+                <div>
+                    @Html.DropDownListFor(model => model.EventTypes_id, Model.EventTypes, new { @class = "form-control" })
+                    <a asp-action="CreateType">@ViewData["add"]</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Title_en" class="control-label">@ViewData["titleEn"]</label>
+                <input type="text" asp-for="Event.Title_en" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Title_ru" class="control-label">@ViewData["titleRu"]</label>
+                <input type="text" asp-for="Event.Title_ru" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Description_en" class="control-label">@ViewData["descriptionEn"]</label>
+                <input type="text" asp-for="Event.Description_en" class="form-control, tinymce_text" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Description_ru" class="control-label">@ViewData["descriptionRu"]</label>
+                <input type="text" asp-for="Event.Description_ru" class="form-control, tinymce_text" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
 
 @section Scripts
     {
-    <script>tinymce.init({
+    <script>
+        tinymce.init({
             selector: '.tinymce_text',
             height: 500,
             plugins: [
