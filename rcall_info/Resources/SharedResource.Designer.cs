@@ -115,6 +115,24 @@ namespace fpv_info.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Back.
+        /// </summary>
+        internal static string back_en {
+            get {
+                return ResourceManager.GetString("back_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Назад.
+        /// </summary>
+        internal static string back_ru {
+            get {
+                return ResourceManager.GetString("back_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Batteries.
         /// </summary>
         internal static string batteries_en {
@@ -489,6 +507,60 @@ namespace fpv_info.Resources {
         internal static string name_ru {
             get {
                 return ResourceManager.GetString("name_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name (eng.).
+        /// </summary>
+        internal static string nameEn_en {
+            get {
+                return ResourceManager.GetString("nameEn_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя (англ.).
+        /// </summary>
+        internal static string nameEn_ru {
+            get {
+                return ResourceManager.GetString("nameEn_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name (ru.).
+        /// </summary>
+        internal static string nameRu_en {
+            get {
+                return ResourceManager.GetString("nameRu_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя (русский).
+        /// </summary>
+        internal static string nameRu_ru {
+            get {
+                return ResourceManager.GetString("nameRu_ru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Next.
+        /// </summary>
+        internal static string next_en {
+            get {
+                return ResourceManager.GetString("next_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вперед.
+        /// </summary>
+        internal static string next_ru {
+            get {
+                return ResourceManager.GetString("next_ru", resourceCulture);
             }
         }
         

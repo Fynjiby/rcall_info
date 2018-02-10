@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using fpv_info.Models;
 using fpv_info.Models.ManagerModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Localization;
 
 namespace fpv_info.Controllers
@@ -32,8 +31,10 @@ namespace fpv_info.Controllers
             ViewData["details"] = _sharedLocalizer[SharedResource.GetNameRes("details")];
             ViewData["edit"] = _sharedLocalizer[SharedResource.GetNameRes("edit")];
             ViewData["delete"] = _sharedLocalizer[SharedResource.GetNameRes("delete")];
-            
-            int pageSize = 25;
+            ViewData["back"] = _sharedLocalizer[SharedResource.GetNameRes("back")];
+            ViewData["next"] = _sharedLocalizer[SharedResource.GetNameRes("next")];
+
+            int pageSize = 20;
 
             IQueryable<Event> source = EventsContext.Events;
             var count = await source.CountAsync();

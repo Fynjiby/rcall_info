@@ -333,4 +333,28 @@
   <data name="path_ru" xml:space="preserve">
     <value>Путь</value>
   </data>
+  <data name="back_en" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="back_ru" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="next_en" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="next_ru" xml:space="preserve">
+    <value>Вперед</value>
+  </data>
+  <data name="nameEn_en" xml:space="preserve">
+    <value>Name (eng.)</value>
+  </data>
+  <data name="nameEn_ru" xml:space="preserve">
+    <value>Имя (англ.)</value>
+  </data>
+  <data name="nameRu_en" xml:space="preserve">
+    <value>Name (ru.)</value>
+  </data>
+  <data name="nameRu_ru" xml:space="preserve">
+    <value>Имя (русский)</value>
+  </data>
 </root>

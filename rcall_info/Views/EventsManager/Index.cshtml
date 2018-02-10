@@ -27,7 +27,7 @@
            asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
            class="btn btn-default btn">
             <i class="glyphicon glyphicon-chevron-left"></i>
-            Назад
+            @ViewData["back"]
         </a>
         }
         @if (Model.PageViewModel.HasNextPage)
@@ -35,7 +35,7 @@
         <a asp-action="Index"
            asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
            class="btn btn-default btn">
-            Вперед
+            @ViewData["next"]
             <i class="glyphicon glyphicon-chevron-right"></i>
         </a>
         }

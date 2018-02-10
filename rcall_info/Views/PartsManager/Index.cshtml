@@ -1,0 +1,9 @@
+
+<div class="blank">
+    <div class="blank-page">
+        @foreach (var item in Model)
+        {
+        <div><a asp-action="@item.Key">@item.Value</a></div>
+        }
+    </div>
+</div>

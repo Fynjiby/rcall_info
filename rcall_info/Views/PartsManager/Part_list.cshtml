@@ -1,0 +1,42 @@
+@model fpv_info.Models.ManagerModels.ListPartsManagerViewModel
+
+<div class="blank">
+    <div class="blank-page">
+        <a asp-action="@ViewData["methodCreate"]">@ViewData["add"]</a>
+        <table class="table">
+            <thead><tr><th>@ViewData["nameEn"]</th><th>@ViewData["nameRu"]</th></tr></thead>
+            <tbody>
+                @foreach (var item in Model.Parts)
+            {
+                    <tr>
+                        <td>@item.Name_en</td>
+                            <td>@item.Name_ru</td>
+                                <td>
+                                    <a asp-action="@ViewData["methodDetails"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["details"]</a> |
+                                    <a asp-action="@ViewData["methodEdit"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["edit"]</a> |
+                                    <a asp-action="@ViewData["methodDelete"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["delete"]</a>
+                                </td>
+                            </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.PageViewModel.HasPreviousPage)
+        {
+            <a asp-action="@ViewData["caller"]"
+               asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+               class="btn btn-default btn">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                @ViewData["back"]
+            </a>
+        }
+        @if (Model.PageViewModel.HasNextPage)
+        {
+            <a asp-action="@ViewData["caller"]"
+               asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+               class="btn btn-default btn">
+                @ViewData["next"]
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </a>
+        }
+    </div>
+</div>
