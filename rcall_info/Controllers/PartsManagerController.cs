@@ -7,9 +7,11 @@ using fpv_info.Models;
 using Microsoft.Extensions.Localization;
 using Microsoft.EntityFrameworkCore;
 using fpv_info.Models.ManagerModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace fpv_info.Controllers
 {
+    [Authorize(Roles = "ContentAdmin")]
     public class PartsManagerController : Controller
     {
 
@@ -47,6 +49,8 @@ namespace fpv_info.Controllers
 
             return View(items);
         }
+
+        #region Lists
 
         public async Task<IActionResult> FC_list(int page = 1)
         {
@@ -188,7 +192,6 @@ namespace fpv_info.Controllers
             return View("Part_list", viewModel);
         }
 
-
         private async Task<ListPartsManagerViewModel> Parts_list(int page, IQueryable<Part> source, string caller)
         {
             ViewData["add"] = _sharedLocalizer[SharedResource.GetNameRes("add")];
@@ -218,6 +221,43 @@ namespace fpv_info.Controllers
             };
             return viewModel;
         }
+
+        #endregion
+
+        //public IActionResult CreateFromFC_list()
+        //{
+        //    ViewData["add"] = _sharedLocalizer[SharedResource.GetNameRes("add")];
+        //    ViewData["date"] = _sharedLocalizer[SharedResource.GetNameRes("date")];
+        //    ViewData["titleEn"] = _sharedLocalizer[SharedResource.GetNameRes("titleEn")];
+        //    ViewData["titleRu"] = _sharedLocalizer[SharedResource.GetNameRes("titleRu")];
+        //    ViewData["descriptionEn"] = _sharedLocalizer[SharedResource.GetNameRes("descriptionEn")];
+        //    ViewData["descriptionRu"] = _sharedLocalizer[SharedResource.GetNameRes("descriptionEn")];
+        //    ViewData["eventType"] = _sharedLocalizer[SharedResource.GetNameRes("eventType")];
+        //    List<EventType> event_types = EventsContext.EventTypes.ToList();
+        //    Event new_event = new Event
+        //    {
+        //        EventDate = DateTime.Now
+        //    };
+
+        //    EventsManagerModel viewModel = new EventsManagerModel
+        //    {
+        //        Event = new_event,
+        //        EventTypes = new SelectList(event_types, "Id", "Name")
+        //    };
+
+        //    return View(viewModel);
+        //}
+        //[HttpPost]
+        //public async Task<IActionResult> Create(EventsManagerModel new_event)
+        //{
+        //    Event event_to_add = new_event.Event;
+        //    EventType find_type = await EventsContext.EventTypes.FirstOrDefaultAsync(p => p.Id == new_event.EventTypes_id);
+        //    event_to_add.Type = find_type;
+        //    EventsContext.Events.Add(event_to_add);
+        //    await EventsContext.SaveChangesAsync();
+        //    return RedirectToAction("Index");
+        //}
+
 
     }
 }

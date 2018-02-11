@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using fpv_info.Models;
 using fpv_info.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace fpv_info.Controllers
 {
+    [Authorize(Roles = "UsersAdmin")]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;

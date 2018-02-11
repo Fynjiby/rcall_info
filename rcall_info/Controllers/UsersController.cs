@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using fpv_info.Models;
 using fpv_info.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace fpv_info.Controllers
 {
+    [Authorize(Roles = "UsersAdmin")]
     public class UsersController : Controller
     {
         UserManager<User> _userManager;

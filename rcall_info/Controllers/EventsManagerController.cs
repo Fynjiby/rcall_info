@@ -8,9 +8,11 @@ using fpv_info.Models;
 using fpv_info.Models.ManagerModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Localization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace fpv_info.Controllers
 {
+    [Authorize(Roles = "ContentAdmin")]
     public class EventsManagerController : Controller
     {
 
