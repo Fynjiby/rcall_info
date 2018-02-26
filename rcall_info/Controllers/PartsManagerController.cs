@@ -131,7 +131,7 @@ namespace fpv_info.Controllers
 
         public async Task<IActionResult> Goggles_list(int page = 1)
         {
-            IQueryable<Part> source = PartsContext.FlightControllers;
+            IQueryable<Part> source = PartsContext.Goggles;
             ListPartsManagerViewModel viewModel = await Parts_list(page, source, "Goggles_list");
             return View("Part_list", viewModel);
         }
@@ -206,7 +206,7 @@ namespace fpv_info.Controllers
             ViewData["methodCreate"] = "CreateFrom" + caller;
             ViewData["methodDetails"] = "DetailsFrom" + caller;
             ViewData["methodEdit"] = "EditFrom" + caller;
-            ViewData["methodDelete"] = "DeleteFrom" + caller;
+            ViewData["methodDelete"] = "Delete" + caller;
 
             int pageSize = 20;
 
@@ -223,6 +223,8 @@ namespace fpv_info.Controllers
         }
 
         #endregion
+
+        #region Create
 
         //public IActionResult CreateFromFC_list()
         //{
@@ -258,6 +260,507 @@ namespace fpv_info.Controllers
         //    return RedirectToAction("Index");
         //}
 
+        #endregion
+
+        #region Edit
+
+        #endregion
+
+        #region Delete
+
+        [HttpGet]
+        [ActionName("DeleteFC_list")]
+        public async Task<IActionResult> ConfirmDeleteFromFC_list(int? id)
+        {
+            if (id != null)
+            {
+                FlightController find_part = await PartsContext.FlightControllers.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "FC_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteFC_list(int? id)
+        {
+            if (id != null)
+            {
+                FlightController find_part = new FlightController { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeletePDB_list")]
+        public async Task<IActionResult> ConfirmDeleteFromPDB_list(int? id)
+        {
+            if (id != null)
+            {
+                PDB find_part = await PartsContext.PDBs.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "PDB_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeletePDB_list(int? id)
+        {
+            if (id != null)
+            {
+                PDB find_part = new PDB { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteAccessories_list")]
+        public async Task<IActionResult> ConfirmDeleteFromAccessories_list(int? id)
+        {
+            if (id != null)
+            {
+                AccessoryModel find_part = await PartsContext.Accessories.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Accessories_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAccessories_list(int? id)
+        {
+            if (id != null)
+            {
+                AccessoryModel find_part = new AccessoryModel { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteLight_list")]
+        public async Task<IActionResult> ConfirmDeleteFromLight_list(int? id)
+        {
+            if (id != null)
+            {
+                Light find_part = await PartsContext.Lights.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Light_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteLight_list(int? id)
+        {
+            if (id != null)
+            {
+                Light find_part = new Light { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteMotors_list")]
+        public async Task<IActionResult> ConfirmDeleteFromMotors_list(int? id)
+        {
+            if (id != null)
+            {
+                Motor find_part = await PartsContext.Motors.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Motors_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteMotors_list(int? id)
+        {
+            if (id != null)
+            {
+                Motor find_part = new Motor { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteESC_list")]
+        public async Task<IActionResult> ConfirmDeleteFromESC_list(int? id)
+        {
+            if (id != null)
+            {
+                ESC find_part = await PartsContext.ESCs.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "ESC_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteESC_list(int? id)
+        {
+            if (id != null)
+            {
+                ESC find_part = new ESC { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteProps_list")]
+        public async Task<IActionResult> ConfirmDeleteFromProps_list(int? id)
+        {
+            if (id != null)
+            {
+                Prop find_part = await PartsContext.Props.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Props_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProps_list(int? id)
+        {
+            if (id != null)
+            {
+                Prop find_part = new Prop { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteServos_list")]
+        public async Task<IActionResult> ConfirmDeleteFromServos_list(int? id)
+        {
+            if (id != null)
+            {
+                Servo find_part = await PartsContext.Servos.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Servos_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteServos_list(int? id)
+        {
+            if (id != null)
+            {
+                Servo find_part = new Servo { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteVideotransmitters_list")]
+        public async Task<IActionResult> ConfirmDeleteFromVideotransmitters_list(int? id)
+        {
+            if (id != null)
+            {
+                VideoTransmitter find_part = await PartsContext.VideoTransmitters.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Videotransmitters_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteVideotransmitters_list(int? id)
+        {
+            if (id != null)
+            {
+                VideoTransmitter find_part = new VideoTransmitter { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteVideoreceivers_list")]
+        public async Task<IActionResult> ConfirmDeleteFromVideoreceivers_list(int? id)
+        {
+            if (id != null)
+            {
+                VideoReceiver find_part = await PartsContext.VideoReceivers.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Videoreceivers_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteVideoreceivers_list(int? id)
+        {
+            if (id != null)
+            {
+                VideoReceiver find_part = new VideoReceiver { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteCameras_list")]
+        public async Task<IActionResult> ConfirmDeleteFromCameras_list(int? id)
+        {
+            if (id != null)
+            {
+                Camera find_part = await PartsContext.Cameras.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Cameras_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteCameras_list(int? id)
+        {
+            if (id != null)
+            {
+                Camera find_part = new Camera { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteGoggles_list")]
+        public async Task<IActionResult> ConfirmDeleteFromGoggles_list(int? id)
+        {
+            if (id != null)
+            {
+                Goggle find_part = await PartsContext.Goggles.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Goggles_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteGoggles_list(int? id)
+        {
+            if (id != null)
+            {
+                Goggle find_part = new Goggle { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteAntennas_list")]
+        public async Task<IActionResult> ConfirmDeleteFromAntennas_list(int? id)
+        {
+            if (id != null)
+            {
+                Antenna find_part = await PartsContext.Antennas.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Antennas_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAntennas_list(int? id)
+        {
+            if (id != null)
+            {
+                Antenna find_part = new Antenna { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteTransmitters_list")]
+        public async Task<IActionResult> ConfirmDeleteFromTransmitters_list(int? id)
+        {
+            if (id != null)
+            {
+                Transmitter find_part = await PartsContext.Transmitters.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Transmitters_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteTransmitters_list(int? id)
+        {
+            if (id != null)
+            {
+                Transmitter find_part = new Transmitter { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteReceivers_list")]
+        public async Task<IActionResult> ConfirmDeleteFromReceivers_list(int? id)
+        {
+            if (id != null)
+            {
+                Receiver find_part = await PartsContext.Receivers.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Receivers_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteReceivers_list(int? id)
+        {
+            if (id != null)
+            {
+                Receiver find_part = new Receiver { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteRcother_list")]
+        public async Task<IActionResult> ConfirmDeleteFromRcother_list(int? id)
+        {
+            if (id != null)
+            {
+                RCOther find_part = await PartsContext.RCOthers.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Rcother_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteRcother_list(int? id)
+        {
+            if (id != null)
+            {
+                RCOther find_part = new RCOther { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteBatteries_list")]
+        public async Task<IActionResult> ConfirmDeleteFromBatteries_list(int? id)
+        {
+            if (id != null)
+            {
+                Battery find_part = await PartsContext.Batteries.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Batteries_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteBatteries_list(int? id)
+        {
+            if (id != null)
+            {
+                Battery find_part = new Battery { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteChargers_list")]
+        public async Task<IActionResult> ConfirmDeleteFromChargers_list(int? id)
+        {
+            if (id != null)
+            {
+                Charger find_part = await PartsContext.Chargers.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Chargers_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteChargers_list(int? id)
+        {
+            if (id != null)
+            {
+                Charger find_part = new Charger { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteFrames_list")]
+        public async Task<IActionResult> ConfirmDeleteFromFrames_list(int? id)
+        {
+            if (id != null)
+            {
+                Frame find_part = await PartsContext.Frames.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Frames_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteFrames_list(int? id)
+        {
+            if (id != null)
+            {
+                Frame find_part = new Frame { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        [ActionName("DeleteBody_list")]
+        public async Task<IActionResult> ConfirmDeleteFromBody_list(int? id)
+        {
+            if (id != null)
+            {
+                Fuselage find_part = await PartsContext.Fuselages.FirstOrDefaultAsync(p => p.Id == id);
+                return DeleteView(find_part, "Body_list");
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteBody_list(int? id)
+        {
+            if (id != null)
+            {
+                Fuselage find_part = new Fuselage { Id = id.Value };
+                await DeletePart(find_part);
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+        private IActionResult DeleteView(Part part, string caller)
+        {
+            ViewData["methodDeletePost"] = "Delete" + caller;
+            return View("Delete", part);
+        }
+
+        private async Task DeletePart(Part part)
+        {
+            PartsContext.Entry(part).State = EntityState.Deleted;
+            await PartsContext.SaveChangesAsync();
+        }
+
+        #endregion
 
     }
 }

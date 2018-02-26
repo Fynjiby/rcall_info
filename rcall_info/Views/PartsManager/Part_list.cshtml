@@ -12,9 +12,9 @@
                         <td>@item.Name_en</td>
                             <td>@item.Name_ru</td>
                                 <td>
-                                    <a asp-action="@ViewData["methodDetails"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["details"]</a> |
-                                    <a asp-action="@ViewData["methodEdit"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["edit"]</a> |
-                                    <a asp-action="@ViewData["methodDelete"]" asp-controller="eventsManager" asp-route-id="@item.Id">@ViewData["delete"]</a>
+                                    <a asp-action="@ViewData["methodDetails"]" asp-controller="partsManager" asp-route-id="@item.Id">@ViewData["details"]</a> |
+                                    <a asp-action="@ViewData["methodEdit"]" asp-controller="partsManager" asp-route-id="@item.Id">@ViewData["edit"]</a> |
+                                    <a asp-action="@ViewData["methodDelete"]" asp-controller="partsManager" asp-route-id="@item.Id">@ViewData["delete"]</a>
                                 </td>
                             </tr>
                 }
