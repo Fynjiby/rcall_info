@@ -36,6 +36,7 @@ namespace fpv_info.Models
         public DbSet<BEC> BECs { get; set; }
         public DbSet<AccessoryType> AccessoryTypes { get; set; }
         public DbSet<Measurement> Measurements { get; set; }
+        public DbSet<PullMeasurement> PullMeasurements { get; set; }
         public DbSet<PropType> PropTypes { get; set; }
         public DbSet<MotorKV> MotorKVs { get; set; }
         public DbSet<Current> Currents { get; set; }
